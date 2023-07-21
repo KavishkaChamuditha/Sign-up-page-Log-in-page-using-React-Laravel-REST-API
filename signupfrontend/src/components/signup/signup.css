@@ -1,0 +1,242 @@
+.background-clr{
+    background-color: #591A1C;
+}
+
+.logostlye{
+    width: 100px !important;
+    height: 100px;
+    margin-left: -5%;
+}
+
+.cardborder{
+    border-radius: 180px 70px 70px 190px !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.fashionimg{
+    border-radius: 180px 190px 180px 190px !important;
+}
+
+.background-clr{
+    border-radius: 180px 190px 180px 190px !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.labeltxt{
+    font-family: 'Roboto', sans-serif;
+    margin-left: -480px;
+    text-align: center !important;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.labeltext{
+    font-family: 'Roboto', sans-serif;
+    margin-left: -450px;
+    text-align: center !important;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.inputstyle{
+    width: 567px !important;
+    height: 40px !important;
+    flex-shrink: 0 !important;
+    border-radius: 20px !important;
+    background: #EEE !important;
+}
+
+placeholder{
+    text-align: center !important;
+}
+
+.marginfrgtpassword{
+    margin-bottom: 200px !important;
+    text-decoration: none;
+}
+
+.icons{
+    border-radius: 180px 90px 180px 90px !important;
+    margin-left: 20px;
+    background-color: #960C14 !important;
+    border-color: #960C14 !important;
+}
+
+.icons:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+}
+
+.btnsbmt {
+    background-color: #000000 !important;
+    width: 150px !important;
+    height: 43px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2.5px !important;
+    font-weight: 500 !important;
+    color: #000 !important;
+    background-color: #fff !important;
+    border: none !important;
+    border-radius: 45px !important;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease 0s !important;
+    cursor: pointer !important;
+    outline: none !important;
+    font-family: Roboto !important; 
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: normal !important; 
+    font-size: 18px !important;
+  }
+  
+  .btnsbmt:hover {
+    background-color: #000000 !important;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4) !important;
+    color: #fff !important;
+    transform: translateY(-7px) !important;
+  }
+  
+  .btnsbmt:active {
+    transform: translateY(-1px) !important;
+  }
+
+.btncancle {
+    background: #960C14 !important;
+    width: 150px !important;
+    height: 43px !important;
+    margin-left: 20px;
+    text-transform: uppercase !important;
+    letter-spacing: 2.5px !important;
+    font-weight: 500 !important;
+    color: #000 !important;
+    background-color: #fff !important;
+    border: none !important;
+    border-radius: 45px !important;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease 0s !important;
+    cursor: pointer !important;
+    outline: none !important;
+    font-family: Roboto !important; 
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: normal !important; 
+    font-size: 18px !important;
+  }
+  
+  .btncancle:hover {
+    background: #be0a13 !important;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4) !important;
+    color: #fff !important;
+    transform: translateY(-7px) !important;
+  }
+  
+  .btncancle:active {
+    transform: translateY(-1px) !important;
+  }
+
+  /* responsive code start from here */
+/* mobile view */
+@media screen and (max-width: 768px) {
+    .labeltxt{
+        margin-right: -280px;
+    }
+    .labeltext{
+        margin-right: -280px;
+    }
+
+    .inputstyle{
+        width: 300px !important;
+        height: 40px !important;
+        flex-shrink: 0 !important;
+        border-radius: 20px !important;
+        background: #EEE !important;
+    }
+
+    .full{
+        width: 390px !important;
+    }
+
+    .background-clr{
+        border-radius: 0px 190px 0px 190px !important;
+    }
+
+    .cardborder{
+        border-radius: 200px 210px 10px 110px !important;
+    }
+    
+
+  }
+
+  
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1394px) {
+    .labeltxt{
+        margin-right: -100px;
+    }
+    .labeltext{
+        margin-right: -100px;
+    }
+
+    .inputstyle{
+        width: 500px !important;
+        height: 40px !important;
+        flex-shrink: 0 !important;
+        border-radius: 20px !important;
+        background: #EEE !important;
+    }
+
+    .full{
+        width: 1290px !important;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1188px) {
+    .labeltxt{
+        margin-right: -170px;
+    }
+    .labeltext{
+        margin-right: -170px;
+    }
+
+    .inputstyle{
+        width: 400px !important;
+        height: 40px !important;
+        flex-shrink: 0 !important;
+        border-radius: 20px !important;
+        background: #EEE !important;
+    }
+
+    .full{
+        width: 1290px !important;
+    }
+  }
+
+
+  @media (min-width: 769px) and (max-width: 982px) {
+    .labeltxt{
+        margin-right: -270px;
+    }
+    .labeltext{
+        margin-right: -270px;
+    }
+
+    .inputstyle{
+        width: 300px !important;
+        height: 40px !important;
+        flex-shrink: 0 !important;
+        border-radius: 20px !important;
+        background: #EEE !important;
+    }
+
+    .full{
+        width: 1290px !important;
+    }
+
+    .fashionimg{
+        margin-top: 300px;
+    }
+
+    .btncancle{ 
+        margin-right: -10px;
+    }
+
+  }
