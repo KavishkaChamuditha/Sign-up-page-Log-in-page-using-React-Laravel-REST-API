@@ -165,6 +165,10 @@ placeholder{
         width: 390px !important;
     }
 
+    .cardborder{
+        margin-top: 400px;
+    }
+
     .background-clr{
         border-radius: 0px 190px 0px 190px !important;
     }

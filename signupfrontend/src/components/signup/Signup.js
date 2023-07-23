@@ -16,7 +16,10 @@ function Signup() {
     const navigate = useNavigate();
     
     async function signUP(){  
-        
+      if (!name || !email || !password) {
+        alert("Please fill in all the required fields.");
+        return;
+      }
       //converting to objects 
         let item = {name,email,password}
        // check the data being sent to the serve in the console
@@ -76,17 +79,17 @@ function Signup() {
             <Form>
               <Form.Group className='mt-4'>
                 <Form.Label className='labeltxt'>Your Name</Form.Label>
-                <input type="text" value={name} onChange={(e)=>setName(e.target.value)} className='form-control inputstyle' placeholder='Enter Your Full Name'/>
+                <input type="text" value={name} onChange={(e)=>setName(e.target.value)} className='form-control inputstyle' placeholder='Enter Your Full Name'required/>
             </Form.Group>
 
             <Form.Group className='mt-4'>
                 <Form.Label className='labeltext'>Email address</Form.Label>
-                <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)} className='form-control inputstyle' placeholder='Enter Your Email Address'/>
+                <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)} className='form-control inputstyle' placeholder='Enter Your Email Address'required/>
             </Form.Group>
 
             <Form.Group className='mt-4'>
                 <Form.Label className='labeltext'>Your Password</Form.Label>
-                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} className='form-control inputstyle' placeholder='Enter Your Password'/>
+                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} className='form-control inputstyle' placeholder='Enter Your Password'required/>
             </Form.Group>
 
               <Form.Group className='mt-4'>
@@ -96,7 +99,7 @@ function Signup() {
               
               <Link to="/signinuser">
                 <p className="mt-2 pb-lg-2" style={{ color: '#393f81' }}>
-                  Already have an account? <a href="#!" style={{ color: '#393f81' }}>Go to Login Page</a>
+                  Already have an account? Go to Login Page
                 </p>
               </Link>
 
@@ -105,12 +108,12 @@ function Signup() {
                 <Button  className='btn icons'><Facebook/></Button>
                 <Button  className='btn icons'><Twitter/></Button>
               </Form.Group>
-
+              
             </Form>
 
             <div className='mt-3 d-flex flex-row justify-content-center'>
-              <a href="#!" className="small text-muted me-1">Terms of use.</a>
-              <a href="#!" className="small text-muted">Privacy policy</a>
+              <Link><p className="small text-muted me-1">Terms of use.</p></Link>
+              <Link><p className="small text-muted">Terms of use.</p></Link>
             </div>
 
           </Card.Body>

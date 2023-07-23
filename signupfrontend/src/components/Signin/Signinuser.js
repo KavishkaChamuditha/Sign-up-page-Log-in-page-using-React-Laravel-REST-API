@@ -15,36 +15,43 @@ function Signinuser() {
 
   useEffect(() => {
     if (localStorage.getItem('user-info')) {
-      // navigate("/dashboard");
+       //navigate("/dashboard");
     }
   }, [navigate]);
 
- async function login (){
-    console.warn(email,password);
- 
-    //adding data to the object
-    let item = {email,password};
-
-    let result = await fetch("http://localhost:8000/api/login",{
-      method:'POST',
-      //sending content type data
-      headers:{
-        "Content-Type" : "application/json", 
-        //what type of data is accepting only json
-        "Accept" : "application/json" 
+  async function login() {
+    if (!email || !password) {
+      alert("Please fill in all the required fields.");
+      return;
+    }
+  
+    console.warn(email, password);
+  
+    // Adding data to the object
+    let item = { email, password };
+  
+    let result = await fetch("http://localhost:8000/api/login", {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
       },
-      body:JSON.stringify(item)   
-    
-      });
-
-      result = await result.json();
-      //storing on the localstorage
-      localStorage.setItem("user-info",JSON.stringify(result))
-      navigate("/dashboard");
-
+      body: JSON.stringify(item)
+    });
+  
+    result = await result.json();
+  
+    // Check if there's an error in the response
+    if (result && result.Error) {
+      alert(result.Error);
+      return;
+    }
+  
+    // Login is successful, store user info in local storage and navigate to the dashboard
+    localStorage.setItem("user-info", JSON.stringify(result));
+    navigate("/dashboard");
   }
-
-
+  
   const  [loading, setloading] = useState(false);
 
   useEffect (() => {
@@ -56,7 +63,6 @@ function Signinuser() {
 
   return (
    
-    
       <Container className="my-5 full">
          {
       loading ? 
@@ -82,12 +88,12 @@ function Signinuser() {
             <Form>
             <Form.Group className='mt-4'>
                 <Form.Label className='labeltext'>Email address</Form.Label>
-                <input type="text" onChange={(e)=>setEmail(e.target.value)} className='form-control inputstyle' placeholder='Enter Your Email Address'/>
+                <input type="text" onChange={(e)=>setEmail(e.target.value)} className='form-control inputstyle' placeholder='Enter Your Email Address' required/>
             </Form.Group>
 
             <Form.Group className='mt-4'>
                 <Form.Label className='labeltext'>Your Password</Form.Label>
-                <input type="password" onChange={(e)=>setPassword (e.target.value)} className='form-control inputstyle' placeholder='Enter Your Password'/>
+                <input type="password" onChange={(e)=>setPassword (e.target.value)} className='form-control inputstyle' placeholder='Enter Your Password' required/>
             </Form.Group>
 
               <Form.Group className='mt-5'>
@@ -96,12 +102,12 @@ function Signinuser() {
               </Form.Group> 
 
               <div className='mt-4'>
-              <a className="small text-muted  marginfrgtpassword" href="#!">Forgot password?</a>
+                <Link className="small text-muted  marginfrgtpassword">Forgot password?</Link>
               </div>
 
               <Link to="/signupuser">
                 <p className="mt-2 pb-lg-2" style={{ color: '#393f81' }}>
-                  Don't have an account? <a href="#!" style={{ color: '#393f81' }}>Go to Sign Up Page</a>
+                  Don't have an account? Go to Sign Up Page
                 </p>
               </Link>
 
@@ -114,8 +120,8 @@ function Signinuser() {
             </Form>
 
             <div className='mt-3 d-flex flex-row justify-content-center'>
-              <a href="#!" className="small text-muted me-1">Terms of use.</a>
-              <a href="#!" className="small text-muted">Privacy policy</a>
+              <Link className="small text-muted me-1">Terms of use.</Link>
+              <Link className="small text-muted me-1">Privacy policy</Link>
             </div>
 
           </Card.Body>
